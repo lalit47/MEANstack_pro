@@ -1,0 +1,45 @@
+<div class="container-fluid">
+  <div class="row" style="height: 100vh">
+    <!-- Left Block -->
+    <div class="col bg-danger d-flex flex-column justify-content-center align-items-center text-light">
+      <div>
+        <fa-icon [icon]="fashoppingBasket" style="font-size: 54px"></fa-icon>
+      </div>
+
+      <div class="h3">Welcome to GroceryList Manager</div>
+
+      <div class="h4">
+        You dont need to worry about grocery management!</div>
+      <div class="h4"> We are here to take care your groceries!</div>
+    </div>
+
+
+
+    <!-- Right Block-->
+    <div class="col bg-dark d-flex flex-column justify-content-center align-items-center" [formGroup]="fbFormGroup">
+      <div class="alert alert-danger text-light" role="alert" *ngIf="uiInvalidCredential">
+        Please enter your data correctly!
+      </div>
+      <div style="border: 2px solid royalblue ;">
+
+        <div>
+          <div class="h4" style="color:white">LOGIN</div>
+
+          <div>
+            <input type="text" placeholder="Enter Username" class="form-control" formControlName="username" />
+          </div>
+
+          <div class="mt-1">
+            <input type="password" placeholder="Enter Password" class="form-control" formControlName="password" />
+          </div>
+
+          <button class="btn btn-sm btn-outline-light mt-2 mb-2" [disabled]="!fbFormGroup.valid"
+            (click)="loginProcessHere()">
+            Log me in
+          </button>
+
+          <a routerLink="/register">Register Here</a>
+        </div>
+      </div>
+    </div>
+  </div>
